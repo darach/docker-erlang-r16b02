@@ -25,10 +25,6 @@ RUN kerl update releases
 RUN KERL_CONFIGURE_OPTIONS=--enable-hipe kerl build R16B02 r16b02
 RUN kerl install r16b02 /opt/erlang/r16b02
 
-# Make r16b02 current
-RUN ln -s opt/erlang/r16b02 /opt/erlang/current
-RUN cd /usr/local/bin && find /opt/erlang/current/bin -exec ln -s '{}' \;
-
 # Install Rebar
 RUN cd /opt/erlang && git clone git://github.com/rebar/rebar.git
 RUN cd /opt/erlang/rebar && ./bootstrap
@@ -38,3 +34,5 @@ RUN ln -s /opt/erlang/rebar/rebar /usr/local/bin/rebar
 RUN cd /opt/erlang && git clone git://github.com/erlware/relx.git
 RUN cd /opt/erlang/relx && ./make
 RUN ln -s /opt/erlang/relx/relx /usr/local/bin/relx
+
+CMD /opt/erlang/r16b02/bin/erl -sname test
