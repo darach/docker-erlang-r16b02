@@ -23,7 +23,7 @@ RUN ln -s /opt/erlang/kerl /usr/local/bin/kerl
 RUN kerl update releases
 
 # Install Erlang/OTP R16B02
-RUN KERL_CONFIGURE_OPTIONS=--enable-hipe kerl build R16B02
+RUN KERL_CONFIGURE_OPTIONS=--enable-hipe kerl build R16B02 r16b02
 RUN kerl install r16b02 /opt/erlang/r16b02
 
 # Make r16b02 current
