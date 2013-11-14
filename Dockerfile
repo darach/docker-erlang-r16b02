@@ -35,4 +35,4 @@ RUN cd /opt/erlang && git clone git://github.com/erlware/relx.git
 RUN cd /opt/erlang/relx && ./make
 RUN ln -s /opt/erlang/relx/relx /usr/local/bin/relx
 
-CMD /opt/erlang/r16b02/bin/erl -sname test
+#CMD /opt/erlang/r16b02/bin/erl -sname test
