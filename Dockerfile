@@ -5,7 +5,6 @@ FROM ubuntu:latest
 MAINTAINER darach@gmail.com
 
 # Refresh apt
-# Update the APT cache
 RUN sed -i.bak 's/main$/main universe/' /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get upgrade -y
